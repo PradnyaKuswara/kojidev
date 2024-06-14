@@ -1,0 +1,143 @@
+{
+  "_Dashboard-62f39758.js": {
+    "file": "assets/Dashboard-62f39758.js",
+    "imports": [
+      "resources/js/app.jsx"
+    ]
+  },
+  "_FroalaEditorView-2ba7075e.js": {
+    "file": "assets/FroalaEditorView-2ba7075e.js",
+    "imports": [
+      "resources/js/app.jsx"
+    ]
+  },
+  "_index-cc1b476e.js": {
+    "css": [
+      "assets/index-d8cfa080.css"
+    ],
+    "file": "assets/index-cc1b476e.js",
+    "imports": [
+      "resources/js/app.jsx"
+    ]
+  },
+  "index.css": {
+    "file": "assets/index-d8cfa080.css",
+    "src": "index.css"
+  },
+  "public/assets/images/hero-login.jpg": {
+    "file": "assets/hero-login-d465224c.jpg",
+    "src": "public/assets/images/hero-login.jpg"
+  },
+  "public/assets/images/hero.jpg": {
+    "file": "assets/hero-63418416.jpg",
+    "src": "public/assets/images/hero.jpg"
+  },
+  "public/assets/images/kuswara.jpg": {
+    "file": "assets/kuswara-952cc130.jpg",
+    "src": "public/assets/images/kuswara.jpg"
+  },
+  "resources/css/app.css": {
+    "file": "assets/app-e223e451.css",
+    "src": "resources/js/app.css"
+  },
+  "resources/js/Pages/Admin/Articles/Create.jsx": {
+    "file": "assets/Create-f9e01f75.js",
+    "imports": [
+      "resources/js/app.jsx",
+      "_Dashboard-62f39758.js",
+      "_index-cc1b476e.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "resources/js/Pages/Admin/Articles/Create.jsx"
+  },
+  "resources/js/Pages/Admin/Articles/Edit.jsx": {
+    "file": "assets/Edit-9534f26e.js",
+    "imports": [
+      "resources/js/app.jsx",
+      "_Dashboard-62f39758.js",
+      "_index-cc1b476e.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "resources/js/Pages/Admin/Articles/Edit.jsx"
+  },
+  "resources/js/Pages/Admin/Articles/Index.jsx": {
+    "file": "assets/Index-9d484b3d.js",
+    "imports": [
+      "resources/js/app.jsx",
+      "_Dashboard-62f39758.js",
+      "_FroalaEditorView-2ba7075e.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "resources/js/Pages/Admin/Articles/Index.jsx"
+  },
+  "resources/js/Pages/Admin/Articles/Show.jsx": {
+    "file": "assets/Show-5e3819dd.js",
+    "imports": [
+      "resources/js/app.jsx",
+      "_Dashboard-62f39758.js",
+      "_FroalaEditorView-2ba7075e.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "resources/js/Pages/Admin/Articles/Show.jsx"
+  },
+  "resources/js/Pages/Admin/MainDashboard.jsx": {
+    "file": "assets/MainDashboard-fda5a14b.js",
+    "imports": [
+      "resources/js/app.jsx",
+      "_Dashboard-62f39758.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "resources/js/Pages/Admin/MainDashboard.jsx"
+  },
+  "resources/js/Pages/HomePage.css": {
+    "file": "assets/HomePage-61b3cfb1.css",
+    "src": "resources/js/Pages/HomePage.css"
+  },
+  "resources/js/Pages/HomePage.jsx": {
+    "assets": [
+      "assets/kuswara-952cc130.jpg",
+      "assets/hero-63418416.jpg"
+    ],
+    "css": [
+      "assets/HomePage-61b3cfb1.css"
+    ],
+    "file": "assets/HomePage-131e76f1.js",
+    "imports": [
+      "resources/js/app.jsx"
+    ],
+    "isDynamicEntry": true,
+    "src": "resources/js/Pages/HomePage.jsx"
+  },
+  "resources/js/Pages/LoginPage.jsx": {
+    "assets": [
+      "assets/hero-login-d465224c.jpg"
+    ],
+    "file": "assets/LoginPage-7fa7732c.js",
+    "imports": [
+      "resources/js/app.jsx"
+    ],
+    "isDynamicEntry": true,
+    "src": "resources/js/Pages/LoginPage.jsx"
+  },
+  "resources/js/app.css": {
+    "file": "assets/app-e223e451.css",
+    "src": "resources/js/app.css"
+  },
+  "resources/js/app.jsx": {
+    "css": [
+      "assets/app-e223e451.css"
+    ],
+    "dynamicImports": [
+      "resources/js/Pages/Admin/Articles/Create.jsx",
+      "resources/js/Pages/Admin/Articles/Edit.jsx",
+      "resources/js/Pages/Admin/Articles/Index.jsx",
+      "resources/js/Pages/Admin/Articles/Show.jsx",
+      "resources/js/Pages/Admin/MainDashboard.jsx",
+      "resources/js/Pages/HomePage.jsx",
+      "resources/js/Pages/LoginPage.jsx"
+    ],
+    "file": "assets/app-3131a3d4.js",
+    "isEntry": true,
+    "src": "resources/js/app.jsx"
+  }
+}
