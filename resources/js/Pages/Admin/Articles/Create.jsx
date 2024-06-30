@@ -107,7 +107,7 @@ export default function Create({ auth }) {
                                                     e.target.files[0]
                                                 )
                                             }
-                                            class="file-input file-input-bordered file-input-info w-full bg-white text-base-100 "
+                                            className="file-input file-input-bordered file-input-info w-full bg-white text-base-100 "
                                             accept="image/*"
                                         />
                                     </label>

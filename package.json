@@ -20,10 +20,13 @@
         "@nextui-org/react": "^2.4.1",
         "@vitejs/plugin-react": "^4.3.0",
         "aos": "^3.0.0-beta.6",
+        "devicons-react": "^1.3.0",
         "font-awesome": "^4.7.0",
         "framer-motion": "^11.2.10",
         "react": "^18.3.1",
         "react-dom": "^18.3.1",
-        "react-froala-wysiwyg": "^4.2.1"
+        "react-froala-wysiwyg": "^4.2.1",
+        "react-infinite-logo-slider": "^1.0.13",
+        "tailwindcss-animated": "^1.1.2"
     }
 }

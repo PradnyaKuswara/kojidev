@@ -9,11 +9,12 @@ use Illuminate\Support\Facades\Storage;
 
 class Article extends Model
 {
-    use HasFactory, Slugable;
+    use HasFactory;
 
     const IMAGE_PATH = 'articles';
 
     protected $fillable = [
+        'uuid',
         'title',
         'thumbnail',
         'slug',
@@ -23,5 +24,10 @@ class Article extends Model
     public function thumbnail(): String
     {
         return Storage::url($this->thumbnail);
+    }
+
+    public function getRouteKeyName(): string
+    {
+        return 'slug';
     }
 }

@@ -20,9 +20,9 @@ export default function Navbar({ auth }) {
     return (
         <>
             <div
-                className={`navbar fixed p-4 lg:p-2 z-[2]  top-0 shadow-sm flex justify-between  lg:justify-around transition-colors  duration-300 ${
+                className={`navbar fixed p-6 lg:p-2 z-[2]  top-0 shadow-sm flex justify-between  lg:justify-around transition-colors  duration-300 ${
                     scrollPosition > 0
-                        ? "bg-white text-black"
+                        ? "bg-black text-white"
                         : "bg-transparent"
                 }`}
             >
@@ -48,16 +48,10 @@ export default function Navbar({ auth }) {
                         </li>
                     </ul>
                 </div>
-                <div className="flex-col hidden lg:flex">
-                    <ul className="menu menu-horizontal ">
-                        {!auth.user ? (
-                            <Link
-                                href={route("login")}
-                                className="btn btn-primary btn-outline px-6 btn-sm"
-                            >
-                                Login
-                            </Link>
-                        ) : (
+
+                {auth.user && (
+                    <div className="flex-col hidden lg:flex">
+                        <ul className="menu menu-horizontal ">
                             <div className="flex gap-4">
                                 <Link
                                     href={route("admin.dashboard")}
@@ -65,18 +59,11 @@ export default function Navbar({ auth }) {
                                 >
                                     Dashboard
                                 </Link>
-
-                                <Link
-                                    href={route("logout")}
-                                    method="post"
-                                    className="btn btn-error px-6 btn-sm"
-                                >
-                                    Logout
-                                </Link>
                             </div>
-                        )}
-                    </ul>
-                </div>
+                        </ul>
+                    </div>
+                )}
+
                 <div className="dropdown lg:hidden dropdown-end">
                     <div
                         tabIndex={0}
@@ -135,7 +122,7 @@ export default function Navbar({ auth }) {
                         <li>
                             <div className="flex items-center">
                                 <box-icon name="news" size="sm"></box-icon>
-                                <Link href="/#news" className="text-sm">
+                                <Link href="#news" className="text-sm">
                                     News
                                 </Link>
                             </div>

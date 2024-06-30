@@ -4,8 +4,7 @@ import "froala-editor/css/froala_editor.pkgd.min.css";
 import "froala-editor/js/plugins.pkgd.min.js";
 
 import FroalaEditorComponent from "react-froala-wysiwyg";
-import { Head, useForm } from "@inertiajs/react";
-import { router } from "@inertiajs/react";
+import { Head, useForm, router } from "@inertiajs/react";
 
 export default function Edit({ auth, article }) {
     const { data, setData, patch, errors, processing, progress } = useForm({
@@ -111,7 +110,7 @@ export default function Edit({ auth, article }) {
                                                     e.target.files[0]
                                                 )
                                             }
-                                            class="file-input file-input-bordered file-input-info w-full bg-white text-base-100 "
+                                            classNamee="file-input file-input-bordered file-input-info w-full bg-white text-base-100 "
                                             accept="image/*"
                                         />
                                     </label>

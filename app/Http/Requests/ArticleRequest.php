@@ -25,7 +25,7 @@ class ArticleRequest extends FormRequest
         return [
             'title' => ['required', 'string', 'max:255'],
             'content' => ['required', 'string'],
-            'thumbnail' => [Rule::when($this->conditionalImageUpdate(), '', ['required', Rule::file()->image()->max(1024 * 5), 'mimes:jpg,jpeg,png'])],
+            'thumbnail' => [Rule::when($this->conditionalImageUpdate(), '', ['required']), Rule::when($this->hasThumbnail(), [Rule::file()->image()->max(1024 * 5), 'mimes:jpg,jpeg,png'], '')],
             'slug' => ['string', 'unique:articles,slug'],
         ];
     }
@@ -33,5 +33,10 @@ class ArticleRequest extends FormRequest
     private function conditionalImageUpdate(): bool
     {
         return $this->isMethod('patch') or $this->isMethod('put');
+    }
+
+    private function hasThumbnail(): bool
+    {
+        return $this->hasFile('thumbnail');
     }
 }

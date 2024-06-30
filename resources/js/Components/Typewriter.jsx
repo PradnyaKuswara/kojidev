@@ -28,7 +28,7 @@ const Typewriter = ({ text, delay, infinite, backspace }) => {
         return () => clearTimeout(timeout);
     }, [currentIndex, delay, infinite, text, backspace]);
 
-    return <span>{currentText}</span>;
+    return <span>⭐{currentText}</span>;
 };
 
 export default Typewriter;

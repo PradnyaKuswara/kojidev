@@ -4,7 +4,10 @@ export default function Sidebar({ auth, page }) {
     return (
         <>
             <div className=" antialiased">
-                <div id="view" className="h-full flex flex-row">
+                <div
+                    id="view"
+                    className="sidebar block fixed bottom-0 top-0 z-50 h-full min-h-screen w-[260px] shadow-[5px_0_25px_0_rgba(94,92,154,0.1)] transition-all duration-300 "
+                >
                     <div
                         id="sidebar"
                         className="bg-base-300 h-screen md:block shadow-xl px-3 w-30 md:w-60 lg:w-60 overflow-x-hidden transition-transform duration-300 ease-in-out"
@@ -76,9 +79,19 @@ export default function Sidebar({ auth, page }) {
                                     </svg>
                                     <span className="">Articles</span>
                                 </Link>
-                                <a
-                                    href=""
-                                    className="text-sm font-medium  py-2 px-2 hover:bg-accent hover:text-white hover:scale-105 rounded-md transition duration-150 ease-in-out"
+                                <Link
+                                    href={route("admin.portfolios.index")}
+                                    className={`text-sm font-medium  py-2 px-2 hover:bg-accent hover:text-white hover:scale-105 rounded-md transition duration-150 ease-in-out ${
+                                        route().current(
+                                            "admin.portfolios.index"
+                                        ) ||
+                                        route().current(
+                                            "admin.portfolios.create"
+                                        ) ||
+                                        route().current("admin.portfolios.edit")
+                                            ? "bg-accent text-white text-base"
+                                            : ""
+                                    }`}
                                 >
                                     <svg
                                         className="w-6 h-6 fill-current inline-block"
@@ -94,10 +107,22 @@ export default function Sidebar({ auth, page }) {
                                         ></path>
                                     </svg>
                                     <span className="">Portfolio</span>
-                                </a>
-                                <a
-                                    href=""
-                                    className="text-sm font-medium  py-2 px-2 hover:bg-accent hover:text-white hover:scale-105 rounded-md transition duration-150 ease-in-out"
+                                </Link>
+                                <Link
+                                    href={route("admin.sertificates.index")}
+                                    className={`text-sm font-medium  py-2 px-2 hover:bg-accent hover:text-white hover:scale-105 rounded-md transition duration-150 ease-in-out ${
+                                        route().current(
+                                            "admin.sertificates.index"
+                                        ) ||
+                                        route().current(
+                                            "admin.sertificates.create"
+                                        ) ||
+                                        route().current(
+                                            "admin.sertificates.edit"
+                                        )
+                                            ? "bg-accent text-white text-base"
+                                            : ""
+                                    }`}
                                 >
                                     <svg
                                         className="w-6 h-6 fill-current inline-block"
@@ -109,10 +134,10 @@ export default function Sidebar({ auth, page }) {
                                         <path d="M15 7v2a4 4 0 01-4 4H9.828l-1.766 1.767c.28.149.599.233.938.233h2l3 3v-3h2a2 2 0 002-2V9a2 2 0 00-2-2h-1z"></path>
                                     </svg>
                                     <span className="">Sertificate</span>
-                                </a>
+                                </Link>
 
                                 <Link
-                                    href={route("logout")}
+                                    href={route("admin.logout")}
                                     method="post"
                                     className="text-sm font-medium  py-2 px-2 hover:bg-accent hover:text-white hover:scale-105 rounded-md transition duration-150 ease-in-out"
                                 >

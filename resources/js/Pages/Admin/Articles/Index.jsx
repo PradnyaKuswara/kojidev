@@ -3,10 +3,11 @@ import Table from "../../../Components/Table";
 import { Link, Head } from "@inertiajs/react";
 
 export default function Index({ auth, articles }) {
+    console.log(articles);
     const headTable = [
         {
-            title: "Id",
-            key: "id",
+            title: "No",
+            key: "no",
         },
         {
             title: "Thumbnail",
@@ -15,6 +16,10 @@ export default function Index({ auth, articles }) {
         {
             title: "Title",
             key: "title",
+        },
+        {
+            title: "Slug",
+            key: "slug",
         },
         {
             title: "Actions",
@@ -33,7 +38,7 @@ export default function Index({ auth, articles }) {
                     +Create Article
                 </Link>
                 <Table
-                    className="mt-8"
+                    className="mt-8 w-full"
                     header={headTable}
                     datas={articles}
                     editRoute={route("admin.articles.edit", ":id")}

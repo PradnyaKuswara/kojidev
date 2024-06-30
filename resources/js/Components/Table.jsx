@@ -9,9 +9,9 @@ export default function Table({
     deleteRoute = null,
     showRoute = null,
 }) {
-    console.log(editRoute, deleteRoute);
+    console.log(datas);
     return (
-        <div className={`overflow-x-auto ${className} `}>
+        <div className={`max-w-[75rem] overflow-x-auto ${className} `}>
             <table className="table table-responsive table-zebra">
                 <thead>
                     <tr>
@@ -21,16 +21,21 @@ export default function Table({
                     </tr>
                 </thead>
                 <tbody>
-                    {datas.length > 0 ? (
-                        datas.map((data, index) => (
-                            <tr key={index}>
-                                {header.map((item, index) => (
-                                    <td key={index}>
-                                        {item.key === "thumbnail" ? (
+                    {datas.data.length > 0 ? (
+                        datas.data.map((data, datasIndex) => (
+                            <tr key={datasIndex}>
+                                {header.map((item, itemsIndex) => (
+                                    <td key={itemsIndex}>
+                                        {item.key === "no" ? datasIndex + 1 : null}
+
+                                        {item.key === "thumbnail" ||
+                                        item.key === "image" ? (
                                             <div className="avatar">
                                                 <div className="mask  mask-squircle w-20 h-20">
                                                     <img
-                                                        src={data[item.key]}
+                                                        src={`../../../storage/${
+                                                            data[item.key]
+                                                        }`}
                                                         alt="Avatar Tailwind CSS Component"
                                                     />
                                                 </div>
@@ -42,10 +47,9 @@ export default function Table({
                                         ) : (
                                             data[item.key]
                                         )}
-
                                         {item.key === "actions" && (
                                             <div className="flex gap-4">
-                                                {editRoute && (
+                                                {editRoute && data.slug ? (
                                                     <Link
                                                         method="get"
                                                         href={editRoute.replace(
@@ -56,13 +60,35 @@ export default function Table({
                                                     >
                                                         Edit
                                                     </Link>
+                                                ) : (
+                                                    <Link
+                                                        method="get"
+                                                        href={editRoute.replace(
+                                                            ":id",
+                                                            data.uuid
+                                                        )}
+                                                        className="btn btn-warning"
+                                                    >
+                                                        Edit
+                                                    </Link>
                                                 )}
-                                                {deleteRoute && (
+                                                {deleteRoute && data.slug ? (
                                                     <Link
                                                         method="delete"
                                                         href={deleteRoute.replace(
                                                             ":id",
                                                             data.slug
+                                                        )}
+                                                        className="btn btn-error"
+                                                    >
+                                                        Delete
+                                                    </Link>
+                                                ) : (
+                                                    <Link
+                                                        method="delete"
+                                                        href={deleteRoute.replace(
+                                                            ":id",
+                                                            data.uuid
                                                         )}
                                                         className="btn btn-error"
                                                     >
@@ -96,6 +122,27 @@ export default function Table({
                     )}
                 </tbody>
             </table>
+            <div className="py-12 px-6 flex justify-end">
+                {datas.links.map((link, index) =>
+                    link.url ? (
+                        link.label === "&laquo; Previous" ||
+                        link.label === "Next &raquo;" ? (
+                            <Link
+                                key={index}
+                                href={link.url}
+                                className="btn btn-neutral mx-1"
+                                dangerouslySetInnerHTML={{ __html: link.label }}
+                            ></Link>
+                        ) : null
+                    ) : (
+                        <span
+                            key={index}
+                            className="btn btn-neutral mx-1 opacity-50 cursor-not-allowed"
+                            dangerouslySetInnerHTML={{ __html: link.label }}
+                        ></span>
+                    )
+                )}
+            </div>
         </div>
     );
 }

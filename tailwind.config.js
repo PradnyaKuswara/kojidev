@@ -14,7 +14,7 @@ module.exports = {
         themes: [
             {
                 mytheme: {
-                    primary: "#0088ff",
+                    primary: "#0DB1D5",
 
                     "primary-content": "#000616",
 
@@ -30,7 +30,7 @@ module.exports = {
 
                     "neutral-content": "#c7c6c5",
 
-                    "base-100": "#0b1925",
+                    "base-100": "#000000",
 
                     "base-200": "#0f202e",
 
@@ -57,5 +57,5 @@ module.exports = {
             },
         ],
     },
-    plugins: [require("daisyui")],
+    plugins: [require("daisyui"), require("tailwindcss-animated")],
 };
